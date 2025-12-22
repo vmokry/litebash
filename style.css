@@ -4,9 +4,19 @@ html {
 }
 
 
+
 * {
   font-size: 1rem;
 }
+
+
+
+h1, h2, h3, h4, .special-gothic-expanded-one-regular {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 h1,
 h2,
@@ -70,11 +80,12 @@ header h2 {
 
 }
 .teaser {
-  background-image: url("https://picsum.photos/id/36/1000");
+  /*background-image: url("https://picsum.photos/id/36/1000");
   background-repeat: no-repeat;
   background-position: center;
   background-color: rgba(0, 0, 0, 0.5);
-  background-blend-mode: multiply;
+  background-blend-mode: multiply;*/
+  background-color: grey;
   min-height: 50vh;
   width: 100vw;
   position: relative;
@@ -97,7 +108,7 @@ header h2 {
   color: transparent;
   color: white;
   /*background-clip: text;*/
-  text-shadow: 0 0 3px #000, 0 2px 3px #000;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.5);
   
   
 }
@@ -143,6 +154,12 @@ summary.lite {
   }
 
   .teaser h1 {
-    width: 50%;
+    width: 75%;
   }
+}
+
+/* For wide display  */
+@media (min-width: 1024px) {  
+  body {max-width: 85%;}
+
 }
