@@ -19,7 +19,6 @@ h1,
 h2,
 h3,
 h4,
-h5,
 .special-gothic-expanded-one-regular {
   font-family: "Special Gothic Expanded One", sans-serif;
   font-weight: 400;
@@ -73,8 +72,8 @@ a.btn.primary {
   background:
     linear-gradient(135deg, var(--accent), var(--accent-light));
   box-shadow: 
-    0 14px 40px rgba(139, 100, 255, 0.45),
-    0 2px 6px rgba(0,0,0,0.15);
+    0 10px 30px rgba(139, 100, 255, 0.45),
+    0 2px 4px rgba(0,0,0,0.15);
   transition:
     transform 0.15s ease,
     box-shadow 0.15s ease,
@@ -84,24 +83,33 @@ a.btn.primary {
 a.btn.primary:hover {
 
   box-shadow:
-    0 14px 40px rgba(139, 100, 255, 0.45),
-    0 4px 10px rgba(0, 0, 0, 0.18);
+    0 10px 30px rgba(139, 100, 255, 0.45),
+    0 3px 6px rgba(0, 0, 0, 0.18);
 }
 
 a.btn.primary:active {
 
   box-shadow:
-    0 6px 18px rgba(139, 100, 255, 0.35),
-    0 2px 6px rgba(0, 0, 0, 0.2);
+    0 5px 15px rgba(139, 100, 255, 0.35),
+    0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 a.btn span {
   margin-left: 0.5rem;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 42rem) {
   a.btn span {
     display: none;
+  }
+  header .left {
+    position: relative;
+  }
+  a.brand + span {
+    font-size: 0.9rem;
+    position: absolute;
+    top: -1rem;
+    right: -3rem;
   }
 }
 
@@ -137,13 +145,16 @@ header h2 {
 }
 
 
-
+/* */
 /* Main */
+/* */
 main {
   padding-top: 0;
 }
 
+/* */
 /* Teaser */
+/* */
 .pastel-gradient {
   background:
     linear-gradient(135deg,
@@ -169,18 +180,6 @@ main {
 }
 
 /* */
-/* Main Features */
-/* */
-
-#main-features .column h4 {
-  margin-top: 0.5rem;
-}
-
-#all-features .column h4 {
-  margin-top: 0.5rem;
-}
-
-/* */
 /* Columns */
 /* */
 
@@ -196,7 +195,9 @@ main {
   grid-template-rows: subgrid;
   grid-row: span 2;
   gap: 0;
+  margin-bottom: 2rem;
 }
+
 
 @media (min-width: 25rem) {
   .container {
@@ -208,8 +209,26 @@ main {
   .container {
     grid-template-columns: repeat(4, 1fr);
   }
-
 }
+
+/* */
+/* Main Features */
+/* */
+
+#main-features .column h4 {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+/* */
+/* All Features */
+/* */
+
+#all-features .container h5 {
+  margin-top: 0rem;
+}
+
+
 
 /* */
 /* FAQ */
@@ -219,6 +238,8 @@ main {
   background-color: inherit;
   margin-bottom: 0px;
   border-radius: 0;
+  border-width: 2px;
+  margin-bottom: -2px;
 }
 
 #faq details:first-of-type {
