@@ -5,7 +5,7 @@
   --accent-bg: #f5f7ff;
   --text: #36303b;
   --text-light: #585858;
-  
+
   --accent: #0d47a1;
   --accent-hover: #1266e2;
   --accent-text: var(--bg);
@@ -16,6 +16,55 @@
 
   --border: #a7b2e2;
   --border-width: 2px;
+
+
+
+  
+}
+.pastel-gradient {
+  background:
+    linear-gradient(135deg,
+      rgba(171, 138, 255, 0.75) 0%,
+      rgba(214, 200, 255, 0.75) 25%,
+      rgba(241, 230, 178, 0.75) 75%,
+      rgba(255, 210, 77, 0.75) 100%),
+    url('https://placehold.co/600x400') center / cover no-repeat;
+  background-blend-mode: overlay;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #212121;
+    --accent-bg: #2b2b2b;
+    --text: #dcdcdc;
+    --text-light: #ababab;
+    --accent: #ffb300;
+    --accent-hover: #ffe099;
+    --accent-text: var(--bg);
+    --code: #f06292;
+    --preformatted: #ccc;
+    --disabled: #111;
+  }
+
+  .pastel-gradient {
+    background:
+      linear-gradient(135deg,
+        rgba(128, 64, 255, 1) 0%,
+        rgba(180, 150, 255, 1) 25%,
+        rgba(220, 200, 120, 1) 75%,
+        rgba(255, 180, 40, 1) 100%),
+    url('https://placehold.co/600x400') center / cover no-repeat;
+    background-blend-mode: multiply;
+  }
+
+
+  /* Add a bit of transparency so light media isn't so glaring in dark mode */
+  img,
+  video {
+    opacity: 0.8;
+  }
 }
 
 
@@ -34,7 +83,8 @@ h4,
 }
 
 
-h2 span {
+h2 span,
+header .left a {
   background: linear-gradient(135deg,
       rgba(128, 64, 255, 1) 0%,
       rgba(180, 150, 255, 1) 25%,
@@ -175,12 +225,23 @@ header .wrapper {
   width: 90%;
   margin-inline: auto;
   padding-bottom: 2rem;
-
 }
 
 header .left {
   text-align: left;
   white-space: nowrap;
+}
+
+header .left h2 {
+  font-size: 2rem;
+}
+
+header .left a {
+  text-decoration: none;
+}
+
+header .left a span {
+  color:
 }
 
 header h2 {
@@ -246,18 +307,7 @@ main {
 /* */
 /* Teaser */
 /* */
-.pastel-gradient {
-  background:
-    linear-gradient(135deg,
-      rgba(171, 138, 255, 0.75) 0%,
-      rgba(214, 200, 255, 0.75) 25%,
-      rgba(241, 230, 178, 0.75) 75%,
-      rgba(255, 210, 77, 0.75) 100%),
-    url('https://placehold.co/600x400') center / cover no-repeat;
-  background-blend-mode: overlay;
-}
 
-.hero-image {}
 
 #teaser {
   width: 100vw;
@@ -290,6 +340,7 @@ main {
   overflow: hidden;
   padding: 2rem 0;
 }
+
 .carousel-inner {
   display: flex;
   width: max-content;
@@ -330,6 +381,7 @@ main {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
@@ -408,6 +460,19 @@ main {
   margin-top: 0rem;
 }
 
+/* For semi-size display  */
+@media (min-width: 42rem) {
+  #all-features .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* For full display  */
+@media (min-width: 56rem) {
+  #all-features .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
 
 /* */
@@ -449,6 +514,17 @@ main {
 details[open] .details-anim {
   grid-template-rows: 1fr;
   opacity: 1;
+}
+
+
+/* */
+/* Trial & Buy  */
+
+/* For semi-size display  */
+@media (min-width: 42rem) {
+  #trial-and-buy .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* */
