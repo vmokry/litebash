@@ -394,10 +394,26 @@ main {
   margin-top: 1rem;
   margin-bottom: 0;
 }
-
+#main-features .column {
+  position: relative;
+}
 #main-features .column img {
   margin-bottom: 1rem;
   display: none;
+}
+
+#main-features .number {
+  display: block;
+  margin: auto;
+  text-align: center;
+  line-height: 3rem;
+  width: 3rem;
+  height: 3rem;
+  border: var(--border) var(--border-width) solid;
+  border-radius: 999rem;
+  position: absolute;
+  top: 0;
+  right:0;
 }
 
 
@@ -487,7 +503,6 @@ main {
 
 #faq details:first-of-type {
   border-radius: 1rem 1rem 0 0;
-
 }
 
 #faq details:last-of-type {
