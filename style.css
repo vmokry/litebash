@@ -229,13 +229,11 @@ header .wrapper {
 a.brand b {
   font-weight: unset;
   display: inline-block;
-  border: 0.5rem solid #444;
-
+  
 }
 a.brand i {
   font-weight: unset;
   display: inline-block;
-    border: 0.5rem solid #444;
 position: relative;
 margin-left: -0.5rem;
  
