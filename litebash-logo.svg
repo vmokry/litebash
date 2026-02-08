@@ -5,10 +5,9 @@
 <defs>
 <linearGradient id="PSgrad_0" x1="0%" x2="100%" y1="0%" y2="100%">
 
-  <stop offset="0%" stop-color="rgba(128, 64, 255, 1)" stop-opacity="1" />
-  <stop offset="25%" stop-color="rgba(180, 150, 255, 1)" stop-opacity="1" />
-  <stop offset="75%" stop-color="rgba(220, 200, 120, 1)" stop-opacity="1" />
-  <stop offset="100%" stop-color="rgba(255, 180, 40, 1)" stop-opacity="1" />
+  <stop offset="0%" stop-color="#1266e2" stop-opacity="1" />
+
+  <stop offset="100%" stop-color="#20b0e1" stop-opacity="1" />
 </linearGradient>
 
 </defs>
