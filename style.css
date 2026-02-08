@@ -133,7 +133,7 @@ a.btn.primary.disabled:enabled {
   transform: translateY(0) !important;
   transition: none !important;
   box-shadow: inherit !important;
-  cursor: pointer;span
+  cursor: pointer;
 }
 
 a.btn span {
@@ -169,6 +169,7 @@ a.brand img {
 
 a.brand span {
   font-size: 0.001rem;
+  background-color: none;
 
 }
 
@@ -194,7 +195,7 @@ header .left a {
 }
 
 header .left a span {
-  color:
+
 }
 
 header h2 {
