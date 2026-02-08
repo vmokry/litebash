@@ -167,10 +167,9 @@ a.brand img {
 }
 
 
-a.brand span {
+h2 a.brand span {
   font-size: 0.001rem;
-  background-color: none;
-
+  background-color: inherit;
 }
 
 a.brand i {
