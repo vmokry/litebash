@@ -50,7 +50,8 @@ h2 span {
   margin-top: -0.1rem;
   margin-bottom: -0.1rem;
   padding: 0.1rem 0.5rem;
-  background: rgba(255,255,0, 0.5);
+  color:rgb(106, 106, 45);
+  background: rgba(255,255,0, 0.6);
 }
 h1 i, 
 h2 i {
@@ -283,7 +284,7 @@ main {
       rgba(241, 230, 178, 0.75) 75%,
       rgba(255, 210, 77, 0.75) 100%),
     url('img/placeholder1.png') center / cover no-repeat;
-  background-blend-mode: screen;
+  background-blend-mode: lighten;
 }
 #teaser {
   width: 100vw;
@@ -305,6 +306,9 @@ main {
   margin-top: 0.5rem;
 }
 
+#teaser h2 {
+  font-weight: 600;
+}
 
 
 /* */
