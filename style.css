@@ -22,6 +22,7 @@
 
 }
 
+/*
 .pastel-gradient {
   background:
     linear-gradient(135deg,
@@ -31,7 +32,7 @@
       rgba(255, 210, 77, 0.75) 100%),
     url('https://placehold.co/600x400') center / cover no-repeat;
   background-blend-mode: overlay;
-}
+}/*
 
 h2 span,
 a.brand {
@@ -42,9 +43,10 @@ a.brand {
       rgba(255, 180, 40, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
+}*/
 
 /* Dark theme */
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
@@ -82,13 +84,11 @@ a.brand {
     -webkit-text-fill-color: transparent;
   }
 
-
-  /* Add a bit of transparency so light media isn't so glaring in dark mode */
   img,
   video {
     opacity: 0.8;
   }
-}
+}*/
 
 
 body {
@@ -197,13 +197,6 @@ a.btn span {
     position: relative;
   }
 
-
-  a.brand+span {
-    font-size: 0.9rem;
-    position: absolute;
-    top: -1rem;
-    right: -3rem;
-  }
 }
 
 /* */
@@ -226,17 +219,19 @@ header .wrapper {
   padding-bottom: 2rem;
 }
 
-a.brand b {
-  font-weight: unset;
-  display: inline-block;
-  
+a.brand img {
+  width: 10rem;
+  /*filter: invert(45%) sepia(47%) saturate(2707%) hue-rotate(163deg) brightness(97%) contrast(101%);*/
+}
+
+a.brand span {
+  font-size: 0.001rem;
+
 }
 a.brand i {
   font-weight: unset;
   display: inline-block;
-position: relative;
-margin-left: -0.5rem;
- 
+  position: relative;margin-left: -0.5rem;
 }
 
 
@@ -320,7 +315,16 @@ main {
 /* */
 /* Teaser */
 /* */
-
+#teaser {
+background:
+    linear-gradient(135deg,
+      rgba(171, 138, 255, 0.75) 0%,
+      rgba(214, 200, 255, 0.75) 25%,
+      rgba(241, 230, 178, 0.75) 75%,
+      rgba(255, 210, 77, 0.75) 100%),
+    url('img/placeholder1.png') center / cover no-repeat;
+  background-blend-mode: screen;
+}
 
 #teaser {
   width: 100vw;
