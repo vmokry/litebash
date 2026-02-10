@@ -6,10 +6,11 @@
   --text: #666;
   --text-light: #777;
 
-  --accent-line: #004dc1;
   --accent: #1266e2;
-  --accent-hover: #20b0e1;
+  --accent-gradient: #20b0e1;
+  --accent-soft: #ebfaff;
   --accent-text: var(--bg);
+  --accent-white: white;
 
   --border: #aaa;
   --border-width: 2px;
@@ -23,6 +24,13 @@ body {
   grid-template-columns: 1fr min(70rem, 90%) 1fr;
 }
 
+/* For semi-size display  */
+@media (max-width: 28rem) {
+  body {
+    font-size: 1.075rem;
+  }
+}
+
 h1 {
   font-family: "Special Gothic Expanded One", sans-serif;
   /*font-family: "Montserrat", sans-serif;*/
@@ -32,17 +40,22 @@ h1 {
   color: var(--text-header);
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 700;
   color: var(--text-header);
 }
-h1, h2 {
+
+h1,
+h2 {
   color: var(--text-header);
 }
-h1 span, 
+
+h1 span,
 h2 span {
   display: inline-flex;
   margin-left: -0.5rem;
@@ -50,20 +63,24 @@ h2 span {
   margin-top: -0.1rem;
   margin-bottom: -0.1rem;
   padding: 0.1rem 0.5rem;
-  color:rgb(106, 106, 45);
-  background: rgba(255,255,0, 0.6);
-}
-h1 i, 
-h2 i {
-  font-style: normal;
-  mix-blend-mode: multiply;
+  color: rgb(106, 106, 45);
+  background: rgba(255, 255, 0, 0.6);
 }
 
-
-
+a.link {
+  /*background-color: var(--accent-soft);*/
+}
+a.link.withicon {
+  text-decoration: none;
+}
+a.link.withicon span {
+  text-decoration: underline;
+}
+a.link.withicon:hover span {
+  text-decoration: none;
+}
 a:hover {
-  filter: brightness(1.05);
-  transform: translateY(-1px);
+
 }
 
 a:active {
@@ -80,8 +97,8 @@ a.btn {
   border-radius: 999px;
   border-width: 2px;
   border-style: solid;
-  color: var(--accent-line);
-  border-color: color var(--accent-line);
+  color: var(--accent);
+  border-color: color var(--accent);
   text-decoration: none;
   font-weight: bold;
   letter-spacing: 0.05rem;
@@ -103,9 +120,9 @@ a.btn.primary {
   border-width: 0;
   border-radius: 999px;
   padding: calc(0.5rem + 0.1rem) calc(1.2rem + 0.125rem);
-  color: var(--bg);
+  color: var(--accent-white);
   background:
-    linear-gradient(160deg, var(--accent), var(--accent-hover));
+    linear-gradient(160deg, var(--accent), var(--accent-gradient));
   box-shadow:
     0 2px 4px rgba(0, 0, 0, 0.15);
   transition:
@@ -148,10 +165,9 @@ a.btn span {
 /* */
 body>header {
   padding: 0rem;
-
 }
 
-header .wrapper {
+header .branding {
   margin: auto;
   display: flex;
   align-items: center;
@@ -160,13 +176,73 @@ header .wrapper {
   max-width: 70rem;
   width: 90%;
   margin-inline: auto;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+header nav {
+  padding: 0;
+  line-height: inherit;
+  font-size: inherit;
+}
+
+header nav .wrapper {
+  border-top: var(--border-width) dotted var(--border);
+  max-width: min(70rem, 90%);
+  margin: auto;
+  padding: 0.5rem;
+   background:
+    linear-gradient(135deg,
+      rgba(171, 138, 255, 0.0) 5%,
+      rgba(214, 200, 255, 0.5) 25%,
+      rgba(241, 230, 178, 0.5) 75%,
+      rgba(255, 210, 77, 0.0) 95%);
+  background-blend-mode: lighten;
+}
+
+header nav a,
+header nav a:hover,
+header nav a:visited {
+  margin: 0 0.3rem 0 0.3rem;
+  border: none;
+  border-radius: none;
+  color: var(--accent);
+  display: inline-block;
+  padding: 0;
+  text-decoration: revert;
+  background: none;
+  border-color: none;
+  cursor: pointer;
+}
+header nav a:hover {
+  text-decoration: none;
+}
+header nav a.current {
+  background: none;
+  border-color: inherit;
+  color: inherit;
+  text-decoration: none;
+
+}
+
+/* Reduce nav side on mobile */
+/* Fix of default Simple.css */
+@media only screen and (max-width: 720px) {
+  header nav a {
+    border: revert;
+    padding: revert;
+    text-decoration: revert;
+    line-height: revert;
+  }
+
+  header nav a.current {
+    background: revert;
+  }
 }
 
 a.brand img {
   width: 10rem;
 }
-
 
 h2 a.brand span {
   font-size: 0.001rem;
@@ -179,7 +255,6 @@ a.brand i {
   position: relative;
   margin-left: -0.5rem;
 }
-
 
 header .left {
   text-align: left;
@@ -194,9 +269,7 @@ header .left a {
   text-decoration: none;
 }
 
-header .left a span {
-
-}
+header .left a span {}
 
 header h2 {
   display: inline-block;
@@ -204,6 +277,7 @@ header h2 {
   padding: 0;
   font-size: 1.3rem;
 }
+
 @media (max-width: 42rem) {
   header a.btn span {
     display: none;
@@ -213,10 +287,11 @@ header h2 {
     position: relative;
   }
 }
+
 /* For semi-size display  */
 @media (min-width: 28rem) {
   header a.brand img {
-      width: 12rem;
+    width: 12rem;
   }
 }
 
@@ -286,6 +361,7 @@ main {
     url('img/placeholder1.png') center / cover no-repeat;
   background-blend-mode: lighten;
 }
+
 #teaser {
   width: 100vw;
   position: relative;
@@ -309,7 +385,12 @@ main {
 #teaser h2 {
   font-weight: 600;
 }
-
+#teaser h1 i,
+#teaser h2 i,
+#teaser small code {
+  font-style: normal;
+  mix-blend-mode: multiply;
+}
 
 /* */
 /* What is included? */
@@ -411,7 +492,7 @@ main {
 #main-features .column h4 {
   margin-top: 1rem;
   margin-bottom: 0;
-  box-shadow: 1px ;
+  box-shadow: 1px;
 
 }
 
@@ -441,8 +522,9 @@ main {
 @media (min-width: 28rem) {
   #main-features .column {
     position: relative;
-      margin-bottom: 0;
+    margin-bottom: 0;
   }
+
   #main-features .column+.column {
     position: relative;
     top: 10vh;
@@ -466,8 +548,9 @@ main {
 @media (min-width: 56rem) {
   #main-features .column {
     position: relative;
-       margin-bottom: 60vh;
+    margin-bottom: 60vh;
   }
+
   #main-features .column+.column {
     position: relative;
     top: 20vh;
