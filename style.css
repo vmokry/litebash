@@ -14,6 +14,8 @@
 
   --border: #aaa;
   --border-width: 2px;
+
+  --standard-border-radius: 0.75rem;
 }
 
 
@@ -489,13 +491,16 @@ main {
   display: none;
 }
 
+#main-features .svg-inline--fa {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+
 #main-features .column h4 {
   margin-top: 1rem;
   margin-bottom: 0;
   box-shadow: 1px;
-
 }
-
 
 #main-features .number {
   display: block;
@@ -514,7 +519,6 @@ main {
   line-height: 2rem;
   padding-left: 0.15rem;
   color: var(--border);
-
 }
 
 
@@ -614,11 +618,11 @@ main {
 }
 
 #faq details:first-of-type {
-  border-radius: 1rem 1rem 0 0;
+  border-radius: var(--standard-border-radius) var(--standard-border-radius) 0 0;
 }
 
 #faq details:last-of-type {
-  border-radius: 0 0 1rem 1rem;
+  border-radius: 0 0 var(--standard-border-radius) var(--standard-border-radius);
 }
 
 .details-anim {
