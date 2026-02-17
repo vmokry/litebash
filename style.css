@@ -12,10 +12,14 @@
   --accent-text: var(--bg);
   --accent-white: white;
 
+  --marked: #cea3d9;
+  --marked-gradient: #ba86c7;
+  
   --border: #aaa;
   --border-width: 2px;
 
   --standard-border-radius: 0.75rem;
+  --small-border-radius: 0.25rem;
 }
 
 
@@ -33,7 +37,8 @@ body {
   }
 }
 
-h1 {
+h1,
+.special {
   font-family: "Special Gothic Expanded One", sans-serif;
   /*font-family: "Montserrat", sans-serif;*/
   font-optical-sizing: auto;
@@ -50,6 +55,12 @@ h4 {
   font-style: normal;
   font-weight: 700;
   color: var(--text-header);
+}
+
+article h2:first-child, section h2:first-child, article h3:first-child, section h3:first-child {
+
+    padding-top: 3rem;
+    margin-top: -3rem;
 }
 
 h1,
@@ -69,21 +80,32 @@ h2 span {
   background: rgba(255, 255, 0, 0.6);
 }
 
+mark {
+  border-radius: var(--small-border-radius);
+    background:
+    linear-gradient(160deg, var(--marked), var(--marked-gradient));
+  color: var(--accent-white);
+  font-style: italic;
+}
+
+
 a.link {
   /*background-color: var(--accent-soft);*/
 }
+
 a.link.withicon {
   text-decoration: none;
 }
+
 a.link.withicon span {
   text-decoration: underline;
 }
+
 a.link.withicon:hover span {
   text-decoration: none;
 }
-a:hover {
 
-}
+a:hover {}
 
 a:active {
   position: relative;
@@ -193,7 +215,7 @@ header nav .wrapper {
   max-width: min(70rem, 90%);
   margin: auto;
   padding: 0.5rem;
-   background:
+  background:
     linear-gradient(135deg,
       rgba(171, 138, 255, 0.0) 5%,
       rgba(214, 200, 255, 0.5) 25%,
@@ -216,9 +238,11 @@ header nav a:visited {
   border-color: none;
   cursor: pointer;
 }
+
 header nav a:hover {
   text-decoration: none;
 }
+
 header nav a.current {
   background: none;
   border-color: inherit;
@@ -387,6 +411,7 @@ main {
 #teaser h2 {
   font-weight: 600;
 }
+
 #teaser h1 i,
 #teaser h2 i,
 #teaser small code {
@@ -456,6 +481,12 @@ main {
 /* Hero  */
 /* */
 
+#hero h2 {
+  margin-bottom: 0.5rem;
+}
+#hero h2 + mark + p {
+  margin-top: 1rem;
+}
 
 
 /* For semi-size display  */
@@ -480,6 +511,7 @@ main {
   background-color: white;
   margin: -0.5rem;
   margin-bottom: 1rem;
+  margin-top: 0;
   padding: 1rem 1rem;
   border-radius: var(--standard-border-radius);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -498,27 +530,31 @@ main {
 
 #main-features .column h4 {
   margin-top: 1rem;
-  margin-bottom: 0;
+
   box-shadow: 1px;
 }
 
 #main-features .number {
   display: block;
-  display: none;
+
   margin: auto;
+
   text-align: center;
-  width: 3rem;
-  height: 3rem;
-  border: var(--border) var(--border-width) solid;
+  font-weight: 700;
+  width: 3.5rem;
+  height: 3.5rem;
+  /*border: var(--border) var(--border-width) solid;*/
+  background: rgba(255, 255, 0, 0.6);
+  color: rgb(106, 106, 45);
   border-radius: 999rem;
   position: absolute;
-  top: 0;
-  right: 0;
+  left: calc(50% - 1.75rem);
+  top: -0.8rem;
   font-size: 1.5rem;
-  padding-top: 0.3rem;
-  line-height: 2rem;
-  padding-left: 0.15rem;
-  color: var(--border);
+  line-height: 3.5rem;
+  padding-left: 0.25rem;
+
+
 }
 
 
@@ -574,7 +610,29 @@ main {
   }
 }
 
+/* */
+/* Trusted By */
+/* */
+#trusted-by img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 100rem;
+  display: block;
+  margin: auto;
+}
 
+#trusted-by h4,
+#trusted-by p {
+  text-align: center;
+}
+
+#trusted-by h4 {
+  margin-top: 0.5rem;
+}
+
+#trusted-by p {
+  margin-top: -2rem;
+}
 
 
 /* */
