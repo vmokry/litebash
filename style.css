@@ -268,9 +268,10 @@ header nav a.current {
 
 a.brand img {
   width: 10rem;
+  border-radius: 0;
 }
 
-h2 a.brand span {
+a.brand span {
   font-size: 0.001rem;
   background-color: inherit;
 }
@@ -280,6 +281,10 @@ a.brand i {
   display: inline-block;
   position: relative;
   margin-left: -0.5rem;
+}
+a.brand.small img {
+width: 3rem;
+padding-bottom: 0;
 }
 
 header .left {
