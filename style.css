@@ -14,7 +14,7 @@
 
   --marked: #cea3d9;
   --marked-gradient: #ba86c7;
-  
+
   --border: #aaa;
   --border-width: 2px;
 
@@ -56,11 +56,34 @@ h4 {
   font-weight: 700;
   color: var(--text-header);
 }
+#trusted-by h3,
+#main-features h3 {
+  font-size: 1.44rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+  
+}
 
-article h2:first-child, section h2:first-child, article h3:first-child, section h3:first-child {
+#all-features h3 {
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
 
-    padding-top: 3rem;
-    margin-top: -3rem;
+/* Reduce header size on mobile */
+@media only screen and (max-width: 720px) {
+  #trusted-by h3,
+  #main-features h3 {
+    font-size: 1.25rem;
+  }
+}
+
+article h2:first-child,
+section h2:first-child,
+article h3:first-child,
+section h3:first-child {
+
+  padding-top: 3rem;
+  margin-top: -3rem;
 }
 
 h1,
@@ -82,7 +105,7 @@ h2 span {
 
 mark {
   border-radius: var(--small-border-radius);
-    background:
+  background:
     linear-gradient(160deg, var(--marked), var(--marked-gradient));
   color: var(--accent-white);
   font-style: italic;
@@ -265,7 +288,9 @@ header nav a.current {
     background: revert;
   }
 }
-
+a.brand {
+  position: relative;
+}
 a.brand img {
   width: 10rem;
   border-radius: 0;
@@ -276,15 +301,16 @@ a.brand span {
   background-color: inherit;
 }
 
-a.brand i {
-  font-weight: unset;
-  display: inline-block;
-  position: relative;
-  margin-left: -0.5rem;
+a.brand mark {
+  font-size: 0.9rem;
+  position: absolute;
+  text-align: center;
+  top: -0.5rem; right: -4rem;
 }
+
 a.brand.small img {
-width: 3rem;
-padding-bottom: 0;
+  width: 3rem;
+  padding-bottom: 0;
 }
 
 header .left {
@@ -489,7 +515,8 @@ main {
 #hero h2 {
   margin-bottom: 0.5rem;
 }
-#hero h2 + mark + p {
+
+#hero h2+mark+p {
   margin-top: 1rem;
 }
 
@@ -531,12 +558,6 @@ main {
 #main-features .svg-inline--fa {
   margin-top: 0.5rem;
   margin-left: 0.5rem;
-}
-
-#main-features .column h4 {
-  margin-top: 1rem;
-
-  box-shadow: 1px;
 }
 
 #main-features .number {
@@ -626,17 +647,17 @@ main {
   margin: auto;
 }
 
-#trusted-by h4,
+#trusted-by h3,
 #trusted-by p {
   text-align: center;
 }
 
-#trusted-by h4 {
+#trusted-by h3 {
   margin-top: 0.5rem;
 }
 
 #trusted-by p {
-  margin-top: -2rem;
+  margin-top: -1.5rem;
 }
 
 
@@ -644,12 +665,17 @@ main {
 /* All Features */
 /* */
 
-#all-features .container img {
+#all-features img {
   margin-bottom: 1rem;
 }
 
-#all-features .container h5 {
-  margin-top: 0rem;
+#all-features h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#all-features p {
+  margin-top: 0;
 }
 
 /* For semi-size display  */
