@@ -678,6 +678,13 @@ main {
   margin-top: 0;
 }
 
+.version h2 em {
+  font-size: 1.25rem;
+  display: block;
+  font-style: initial;
+  font-weight: 400;
+}
+
 /* For semi-size display  */
 @media (min-width: 42rem) {
   #all-features .container {
