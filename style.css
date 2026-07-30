@@ -661,16 +661,20 @@ main {
 #all-features p {
   margin-top: 0;
 }
-
 .version {
   margin-bottom: 3rem;
 }
 .version h2 em {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   display: block;
   font-style: initial;
   font-weight: 400;
 }
+.version .date {
+  position: relative;
+  top: -2.5rem;
+}
+
 
 /* For semi-size display  */
 @media (min-width: 42rem) {
