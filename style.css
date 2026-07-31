@@ -664,16 +664,16 @@ main {
 .version {
   margin-bottom: 3rem;
 }
-.version h2 em {
+.version h2 em,
+.version h2 .date {
   font-size: 1.15rem;
   display: block;
   font-style: initial;
   font-weight: 400;
+  background-color: inherit;
+  color: inherit;
 }
-.version .date {
-  position: relative;
-  top: -2.5rem;
-}
+
 
 
 /* For semi-size display  */
